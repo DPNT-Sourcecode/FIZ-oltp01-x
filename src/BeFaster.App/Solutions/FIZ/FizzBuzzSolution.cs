@@ -9,28 +9,65 @@ namespace BeFaster.App.Solutions.FIZ
 
             string output= "";
 
+            //Question 1
+            //if (number % 15 == 0)
+            //{
+            //    output = "fizz buzz";
+            //}
+            //else if (number % 3 == 0)
+            //{
+            //    output = "fizz";
+            //}
 
-            if (number % 15 == 0)
+            //else if (number % 5 == 0)
+            //{
+            //    output = "buzz";
+            //}
+
+            //else
+            //{
+            //    output = number.ToString();
+            //}
+            //return output;
+
+            //End Question 1
+
+            string textTest = number.ToString();
+
+            if (number % 15 == 0 || (textTest.Contains("3")) && (textTest.Contains("5")))
             {
                 output = "fizz buzz";
-            }
-            else if (number % 3 == 0)
-            {
-                output = "fizz";
-            }
-
-            else if (number % 5 == 0)
-            {
-                output = "buzz";
             }
 
             else
             {
-                output = number.ToString();
+                if (number % 3 == 0 || textTest.Contains("3"))
+                {
+                    output = "fizz";
+
+                    if (textTest.Contains("5"))
+                    {
+                        output = "fizz buzz";
+                    }
+                }
+
+                else if (number % 5 == 0 || textTest.Contains("5"))
+                {
+                    output = "buzz";
+
+                    if (textTest.Contains("3"))
+                    {
+                        output = "fizz buzz";
+                    }
+                }
+
+                if(output.Length == 0)
+                {
+                    output = number.ToString();
+                }
+
+
             }
-            return output;
-
-
 
             // throw new SolutionNotImplementedException();
         }
