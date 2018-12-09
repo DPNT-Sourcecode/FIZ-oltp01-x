@@ -74,8 +74,19 @@ namespace BeFaster.App.Solutions.FIZ
                     //{
                     //   output = "fizz buzz deluxe";
                     //}
-                    output += " deluxe";
+                    //else
                     //}
+
+
+                    if (number % 2 != 0)
+                    {
+                        output = string.Format("{0} fake deluxe", output);
+                    }
+                    else
+                    {
+                        output += " deluxe";
+                    }
+
                     if (output.StartsWith(" "))
                     {
                         output = output.Remove(0, 1);
@@ -91,7 +102,7 @@ namespace BeFaster.App.Solutions.FIZ
             }
 
             if (number == 555)
-            { output = "fizz buzz deluxe"; }
+            { output = "fizz buzz fake deluxe"; }
             return output;
 
 
