@@ -41,13 +41,13 @@ namespace BeFaster.App.Solutions.FIZ
 
             textTest.CopyTo(0, array, 0, length);
 
-            if (number % 15 == 0 || (textTest.Contains("3")) && (textTest.Contains("5")))
-            {
-                output = "fizz buzz";
-            }
+            //if (number % 15 == 0 || (textTest.Contains("3")) && (textTest.Contains("5")))
+            //{
+            //    output = "fizz buzz";
+            //}
 
-            else
-            {
+            //else
+            //{
                 if (number % 3 == 0 || textTest.Contains("3"))
                 {
                     output = "fizz";
@@ -68,7 +68,26 @@ namespace BeFaster.App.Solutions.FIZ
                     }
                 }
 
-                if (Array.TrueForAll(array, x => x == array[0]) && number > 10)
+                if (number % 15 == 0 || (textTest.Contains("3")) && (textTest.Contains("5")))
+                {
+                    output = "fizz buzz";
+                }
+
+                if (number % 3 == 0 && textTest.Contains("3") || (number % 5 == 0 && textTest.Contains("5")))
+                {
+                    string output1 = output;
+
+                    if (number % 2 != 0)
+                    {
+                        output = string.Format("{0} fake deluxe", output1);
+                    }
+                    else
+                    {
+                        output = string.Format("{0} deluxe", output1);
+                    }
+                }
+
+                /*if (Array.TrueForAll(array, x => x == array[0]) && number > 10)
                 {
                     //if (output == "fizz buzz")
                     //{
@@ -76,22 +95,8 @@ namespace BeFaster.App.Solutions.FIZ
                     //}
                     //else
                     //}
-
-
-                    if (number % 2 != 0)
-                    {
-                        output = string.Format("{0} fake deluxe", output);
-                    }
-                    else
-                    {
-                        output += " deluxe";
-                    }
-
-                    if (output.StartsWith(" "))
-                    {
-                        output = output.Remove(0, 1);
-                    }
-                }
+                    // }
+                }*/
 
                 if(output.Length == 0)
                 {
@@ -99,7 +104,7 @@ namespace BeFaster.App.Solutions.FIZ
                 }
 
 
-            }
+            //}
 
             if (number == 555)
             { output = "fizz buzz fake deluxe"; }
